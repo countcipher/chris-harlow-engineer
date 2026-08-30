@@ -1,0 +1,52 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ----------------------------------------------------------------------
+  # 1. Redirect external requests from /page.html to /page (301 Permanent)
+  # ----------------------------------------------------------------------
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
+
+  # ----------------------------------------------------------------------
+  # 2. Internally rewrite /page to /page.html if the file exists
+  # ----------------------------------------------------------------------
+  # If the request is not an existing directory
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # And if appending .html matches a real file
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f [OR]
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Security & Performance Defaults
+# ----------------------------------------------------------------------
+
+# Default Charset
+AddDefaultCharset UTF-8
+
+# Prevent directory browsing
+Options -Indexes
+
+# Block access to hidden files/directories (except .well-known)
+<IfModule mod_rewrite.c>
+  RewriteCond %{SCRIPT_FILENAME} -d [OR]
+  RewriteCond %{SCRIPT_FILENAME} -f
+  RewriteRule "(^|/)\.(?!well-known)" - [F]
+</IfModule>
+
+# Leverage browser caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
