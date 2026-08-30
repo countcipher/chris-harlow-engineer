@@ -1,0 +1,149 @@
+// ============================================================
+// LAYOUT — Container, Sections, Grid
+// ============================================================
+@use 'variables' as *;
+
+// --- Container ---
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: clamp($space-lg, 5vw, $space-3xl);
+}
+
+.container--wide {
+  max-width: $container-wide;
+}
+
+.container--narrow {
+  max-width: $container-narrow;
+}
+
+// --- Section ---
+.section {
+  padding-block: $section-padding;
+  position: relative;
+}
+
+.section--surface {
+  background-color: $color-bg-surface-1;
+}
+
+.section--elevated {
+  background-color: $color-bg-surface-2;
+}
+
+// Section header with accent line
+.section__header {
+  margin-bottom: clamp($space-2xl, 4vw, $space-4xl);
+  position: relative;
+}
+
+.section__label {
+  display: inline-block;
+  font-family: $font-mono;
+  font-size: $type-xs;
+  font-weight: $font-weight-medium;
+  color: $color-accent-primary;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: $space-md;
+  position: relative;
+  padding-left: $space-xl;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.25rem;
+    height: 1px;
+    background: $color-accent-primary;
+  }
+}
+
+.section__title {
+  font-family: $font-display;
+  font-weight: $font-weight-extrabold;
+}
+
+.section__subtitle {
+  font-size: $type-body;
+  color: $color-text-secondary;
+  max-width: 60ch;
+  margin-top: $space-md;
+  line-height: 1.7;
+}
+
+// --- Grid systems ---
+.grid {
+  display: grid;
+  gap: $space-xl;
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+// Two-column asymmetric
+.grid--asym {
+  grid-template-columns: 1fr;
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+// --- Full-bleed section ---
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+// --- Divider ---
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    $color-border 20%,
+    $color-border 80%,
+    transparent 100%
+  );
+  margin-block: $space-md;
+}
+
+// --- Section separator (angled) ---
+.section-sep {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: clamp(40px, 5vw, 80px);
+  }
+
+  .shape-fill {
+    fill: $color-bg-primary;
+  }
+}

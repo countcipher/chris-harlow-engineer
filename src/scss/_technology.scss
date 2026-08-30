@@ -1,0 +1,69 @@
+// ============================================================
+// TECHNOLOGY SECTION
+// ============================================================
+@use 'variables' as *;
+
+.tech__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tech-group {
+  padding: $space-lg;
+  background: $color-bg-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+.tech-group__title {
+  font-family: $font-display;
+  font-size: $type-body-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $space-md;
+  padding-bottom: $space-sm;
+  border-bottom: 1px solid $color-border;
+}
+
+.tech-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35em 0.85em;
+  font-family: $font-mono;
+  font-size: $type-xs;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  background: $color-bg-surface-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  transition: color $transition-fast, border-color $transition-fast, background $transition-fast;
+  line-height: 1.5;
+
+  &:hover {
+    color: $color-accent-primary;
+    border-color: rgba($color-accent-primary, 0.2);
+    background: rgba($color-accent-primary, 0.05);
+  }
+}

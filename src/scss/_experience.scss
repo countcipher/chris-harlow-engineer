@@ -1,0 +1,112 @@
+// ============================================================
+// PROFESSIONAL EXPERIENCE TIMELINE
+// ============================================================
+@use 'variables' as *;
+
+.timeline {
+  position: relative;
+  padding-left: $space-2xl;
+
+  @media (min-width: $bp-md) {
+    padding-left: $space-3xl;
+  }
+
+  // Vertical connector line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $space-sm;
+    bottom: $space-sm;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      $color-accent-primary,
+      $color-border 30%,
+      $color-border 70%,
+      transparent
+    );
+
+    @media (min-width: $bp-md) {
+      left: $space-sm;
+    }
+  }
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: $space-2xl;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  // Timeline dot
+  &::before {
+    content: '';
+    position: absolute;
+    left: -$space-2xl;
+    top: 0.35em;
+    width: 10px;
+    height: 10px;
+    background: $color-bg-primary;
+    border: 2px solid $color-accent-primary;
+    border-radius: 50%;
+    z-index: $z-base;
+
+    @media (min-width: $bp-md) {
+      left: calc(-#{$space-3xl} + #{$space-sm});
+    }
+  }
+
+  // Current role — filled dot
+  &:first-child::before {
+    background: $color-accent-primary;
+    box-shadow: 0 0 0 4px $color-accent-glow;
+  }
+}
+
+.timeline__date {
+  font-family: $font-mono;
+  font-size: $type-xs;
+  color: $color-accent-primary;
+  letter-spacing: 0.08em;
+  margin-bottom: $space-xs;
+}
+
+.timeline__role {
+  font-family: $font-display;
+  font-size: $type-h4;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-xs;
+}
+
+.timeline__company {
+  font-size: $type-body-sm;
+  color: $color-text-secondary;
+  margin-bottom: $space-sm;
+}
+
+.timeline__desc {
+  font-size: $type-body-sm;
+  color: $color-text-muted;
+  line-height: 1.7;
+  max-width: 50ch;
+  margin-bottom: 0;
+}
+
+// Current badge
+.timeline__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  font-family: $font-mono;
+  font-size: $type-xs;
+  color: $color-accent-primary;
+  background: $color-accent-glow;
+  padding: 0.2em 0.7em;
+  border-radius: $radius-pill;
+  margin-bottom: $space-sm;
+  font-weight: $font-weight-medium;
+}

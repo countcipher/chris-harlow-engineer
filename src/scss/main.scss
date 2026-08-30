@@ -1,0 +1,32 @@
+// ============================================================
+// MAIN ENTRY — Import all partials
+// ============================================================
+
+// 1. Foundation
+@use 'variables' as *;
+@use 'reset';
+@use 'base';
+
+// 2. Layout
+@use 'layout';
+@use 'utilities';
+
+// 3. Components
+@use 'nav';
+@use 'hero';
+@use 'about';
+@use 'capabilities';
+@use 'case-studies';
+@use 'experience';
+@use 'freelance';
+@use 'technology';
+@use 'working-with-me';
+@use 'resume';
+@use 'contact';
+@use 'footer';
+
+// 4. Animations
+@use 'animations';
+
+// 5. Print
+@use 'print';

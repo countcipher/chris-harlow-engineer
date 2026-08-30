@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris Harlow — CTO, Solution Architect &amp; Full-Stack Engineer</title>
+  <meta name="description" content="Chris Harlow is a CTO, solution architect, and full-stack engineer with 13+ years building production software systems. Specializing in Laravel, Vue.js, applied AI, technical architecture, and technical leadership.">
+  <meta name="author" content="Chris Harlow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chris Harlow — CTO, Solution Architect & Full-Stack Engineer">
+  <meta property="og:description" content="13+ years building production software. Architecture, full-stack engineering, applied AI, and technical leadership.">
+  <meta property="og:url" content="https://chrisharlow.dev">
+  <meta property="og:site_name" content="Chris Harlow">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chris Harlow — CTO, Solution Architect & Full-Stack Engineer">
+  <meta name="twitter:description" content="13+ years building production software. Architecture, full-stack engineering, applied AI, and technical leadership.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chris Harlow",
+    "jobTitle": "Chief Technology Officer",
+    "description": "CTO, Solution Architect, and Full-Stack Engineer with 13+ years of experience building production software systems.",
+    "knowsAbout": ["Software Architecture", "Full-Stack Development", "Laravel", "Vue.js", "Applied AI", "MCP Servers", "Technical Leadership"],
+    "url": "https://chrisharlow.dev"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================================ -->
+  <!-- HEADER -->
+  <!-- ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" aria-label="Chris Harlow — Home">
+        Chris<span class="logo__accent">.</span>Harlow
+      </a>
+
+      <nav class="header__nav" aria-label="Primary navigation">
+        <ul class="nav__list" role="list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#capabilities" class="nav__link">What I Do</a></li>
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#technology" class="nav__link">Technology</a></li>
+          <li><a href="resume.html" class="nav__link">Résumé</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="header__toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open navigation menu"
+      >
+        <span class="toggle__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav__overlay" aria-hidden="true"></div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" inert>
+    <ul class="mobile-nav__list" role="list">
+      <li><a href="#about" class="mobile-nav__link">About</a></li>
+      <li><a href="#capabilities" class="mobile-nav__link">What I Do</a></li>
+      <li><a href="#work" class="mobile-nav__link">Work</a></li>
+      <li><a href="#experience" class="mobile-nav__link">Experience</a></li>
+      <li><a href="#technology" class="mobile-nav__link">Technology</a></li>
+      <li><a href="resume.html" class="mobile-nav__link">Résumé</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- MAIN CONTENT -->
+  <!-- ============================================================ -->
+  <main id="main-content">
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero section" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__label" aria-hidden="true">CTO · Solution Architect · Full-Stack Engineer</p>
+
+          <h1 id="hero-heading" class="hero__title">
+            I design and build software&nbsp;systems that solve real business&nbsp;<span class="hero__title-accent">problems.</span>
+          </h1>
+
+          <p class="hero__description">
+            13+ years of hands-on engineering, architecture, and technical leadership. I work across the full stack — from database design and API architecture to frontend interfaces, AI integrations, and production infrastructure.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#work" class="btn btn--primary">View My Work</a>
+            <a href="resume.html" class="btn btn--secondary">View Résumé</a>
+            <a href="contact.html" class="btn btn--ghost">Contact Me</a>
+          </div>
+
+          <div class="hero__meta" aria-label="Key highlights">
+            <div class="hero__stat">
+              <span class="hero__stat-value">13+</span>
+              <span class="hero__stat-label">Years Building Software</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">Full Stack</span>
+              <span class="hero__stat-label">Architecture to Interface</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-value">Applied AI</span>
+              <span class="hero__stat-label">MCP &amp; Agentic Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative -->
+        <div class="hero__decoration" aria-hidden="true">
+          <div class="hero__grid-pattern"></div>
+          <div class="hero__glow"></div>
+          <div class="hero__ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section section--surface" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">About</p>
+          <h2 id="about-heading" class="section__title">The short version.</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__content reveal">
+            <p class="about__lead">
+              I'm a senior technical generalist. My strength is taking complicated or poorly defined business problems and turning them into maintainable technical systems.
+            </p>
+            <p>
+              Most of my career has been spent building custom business applications, internal tooling, and web platforms — the kind of systems where the requirements aren't obvious and the solution isn't a template. I've done this work as a hands-on engineer, as a technical lead, and most recently as a CTO.
+            </p>
+            <p>
+              I'm equally comfortable discussing architecture and business goals with leadership and then actually designing and building the system. That's not a marketing claim — it's how I've worked for 13 years.
+            </p>
+            <p>
+              More recently, I've been doing applied AI work: building MCP servers, integrating LLMs into deterministic workflows, and creating AI-driven tooling that keeps controlled operations controlled rather than letting a model improvise where it shouldn't.
+            </p>
+          </div>
+
+          <div class="about__highlights">
+            <div class="about__highlight reveal reveal-delay-1">
+              <div class="about__highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+              </div>
+              <h3 class="about__highlight-title">Engineering</h3>
+              <p class="about__highlight-text">Full-stack development, database design, API architecture, and production systems across PHP, JavaScript, and modern web stacks.</p>
+            </div>
+
+            <div class="about__highlight reveal reveal-delay-2">
+              <div class="about__highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m-7.5-3.5 4.24-4.24M15.26 8.74l4.24-4.24M1 12h6m6 0h6M4.5 19.5l4.24-4.24M15.26 15.26l4.24-4.24"/></svg>
+              </div>
+              <h3 class="about__highlight-title">Architecture</h3>
+              <p class="about__highlight-text">System design, integration architecture, security planning, and building systems that remain maintainable at scale.</p>
+            </div>
+
+            <div class="about__highlight reveal reveal-delay-3">
+              <div class="about__highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"/><path d="M9 14a3 3 0 1 0 6 0"/></svg>
+              </div>
+              <h3 class="about__highlight-title">Applied AI</h3>
+              <p class="about__highlight-text">MCP servers, LLM integration, agentic workflows, and AI tooling designed with deterministic guardrails.</p>
+            </div>
+
+            <div class="about__highlight reveal reveal-delay-4">
+              <div class="about__highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="about__highlight-title">Leadership</h3>
+              <p class="about__highlight-text">Technology strategy, developer mentoring, cross-functional collaboration, and translating business needs into technical direction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHAT I DO ========== -->
+    <section id="capabilities" class="section" aria-labelledby="capabilities-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">What I Do</p>
+          <h2 id="capabilities-heading" class="section__title">Capabilities.</h2>
+          <p class="section__subtitle">The systems I build, the problems I solve, and the technologies I work with — across the full lifecycle from strategy through production.</p>
+        </div>
+
+        <div class="capabilities__grid">
+          <!-- Custom Software -->
+          <div class="capability-card reveal reveal-delay-1">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="capability-card__title">Custom Software &amp; Business Systems</h3>
+            <ul class="capability-card__list" role="list">
+              <li>Laravel/PHP applications</li>
+              <li>Custom admin portals</li>
+              <li>Internal business tooling</li>
+              <li>APIs and middleware</li>
+              <li>Database architecture</li>
+              <li>Access-control systems</li>
+              <li>Legacy-system modernization</li>
+              <li>CMS/application integration</li>
+            </ul>
+          </div>
+
+          <!-- Applied AI -->
+          <div class="capability-card reveal reveal-delay-2">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6H14c0-3 2-4 2-6a4 4 0 0 0-4-4Z"/><line x1="10" y1="16" x2="14" y2="16"/><line x1="10" y1="19" x2="14" y2="19"/><line x1="11" y1="22" x2="13" y2="22"/></svg>
+            </div>
+            <h3 class="capability-card__title">Applied AI &amp; Agentic Systems</h3>
+            <ul class="capability-card__list" role="list">
+              <li>LLM integration</li>
+              <li>MCP server development</li>
+              <li>AI tool orchestration</li>
+              <li>Deterministic AI workflows</li>
+              <li>Internal knowledge systems</li>
+              <li>Workflow automation</li>
+              <li>Guardrails and controlled execution</li>
+              <li>AI-assisted developer tooling</li>
+            </ul>
+          </div>
+
+          <!-- Technical Architecture -->
+          <div class="capability-card reveal reveal-delay-3">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="capability-card__title">Technical Architecture</h3>
+            <ul class="capability-card__list" role="list">
+              <li>System architecture</li>
+              <li>API design</li>
+              <li>Database design</li>
+              <li>Security architecture</li>
+              <li>Application integration</li>
+              <li>Scalability and maintainability</li>
+              <li>Infrastructure planning</li>
+              <li>Technical problem solving</li>
+            </ul>
+          </div>
+
+          <!-- Technical Leadership -->
+          <div class="capability-card reveal reveal-delay-4">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="capability-card__title">Technical Leadership</h3>
+            <ul class="capability-card__list" role="list">
+              <li>Technology strategy</li>
+              <li>Developer mentoring</li>
+              <li>Cross-functional leadership</li>
+              <li>Vendor collaboration</li>
+              <li>Requirements translation</li>
+              <li>Technical planning</li>
+              <li>Project and workflow design</li>
+            </ul>
+          </div>
+
+          <!-- Web Platform -->
+          <div class="capability-card reveal reveal-delay-5">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="capability-card__title">Web Platform Engineering</h3>
+            <ul class="capability-card__list" role="list">
+              <li>Laravel &amp; PHP</li>
+              <li>Vue.js &amp; JavaScript</li>
+              <li>MySQL</li>
+              <li>WordPress development</li>
+              <li>HTML5, CSS/SCSS</li>
+              <li>REST APIs</li>
+              <li>Technical SEO</li>
+              <li>Accessibility &amp; Performance</li>
+            </ul>
+          </div>
+
+          <!-- Infrastructure -->
+          <div class="capability-card reveal reveal-delay-6">
+            <div class="capability-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="capability-card__title">Infrastructure &amp; Security</h3>
+            <ul class="capability-card__list" role="list">
+              <li>VPS/server administration</li>
+              <li>Apache/WHM management</li>
+              <li>SSL and DNS</li>
+              <li>CI/CD pipelines</li>
+              <li>Rate limiting &amp; bot mitigation</li>
+              <li>Secure asset delivery</li>
+              <li>Server hardening</li>
+              <li>Penetration &amp; security testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SELECTED WORK ========== -->
+    <section id="work" class="section section--surface" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Selected Work</p>
+          <h2 id="work-heading" class="section__title">Case Studies.</h2>
+          <p class="section__subtitle">A selection of projects that represent the kind of work I do. Click any project to see the full breakdown.</p>
+        </div>
+
+        <div class="case-studies__list">
+
+          <!-- Case Study 1 -->
+          <article class="case-study reveal" data-expanded="false">
+            <div class="case-study__header" role="button" tabindex="0" aria-expanded="false" aria-controls="cs-1-body">
+              <div class="case-study__header-content">
+                <p class="case-study__number">01</p>
+                <h3 class="case-study__title">Custom Business Platform</h3>
+                <p class="case-study__brief">Full-stack platform architecture spanning Laravel, Vue, WordPress, custom middleware, and internal administrative tooling.</p>
+              </div>
+              <div class="case-study__toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div id="cs-1-body" class="case-study__body" aria-hidden="true">
+              <div class="case-study__content">
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Problem</h4>
+                  <p class="case-study__section-text">The business needed internal systems that connected content management, data workflows, and administrative interfaces across multiple platforms — with no off-the-shelf solution that fit the actual requirements.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Approach</h4>
+                  <p class="case-study__section-text">Architected a system that used each technology where it was strongest: WordPress for content authoring, Laravel for application logic and data processing, Vue for interactive frontend components, and custom middleware to connect them.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">What I Built</h4>
+                  <p class="case-study__section-text">Full-stack applications using Laravel and Vue, custom administrative interfaces, internal business tooling, data processing workflows, and integration layers connecting WordPress, Laravel, and business data sources.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technical Decisions</h4>
+                  <p class="case-study__section-text">Chose to keep WordPress for content management while routing application logic through Laravel, rather than forcing either platform into a role it wasn't built for. Built custom middleware rather than relying on third-party integrations that would have introduced fragile dependencies.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Outcome</h4>
+                  <p class="case-study__section-text">A cohesive internal platform that unified content, business logic, and administrative functions — maintained and extended by the development team as business needs evolved.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technologies</h4>
+                  <div class="case-study__tags">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">Custom Middleware</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 2 -->
+          <article class="case-study reveal reveal-delay-1" data-expanded="false">
+            <div class="case-study__header" role="button" tabindex="0" aria-expanded="false" aria-controls="cs-2-body">
+              <div class="case-study__header-content">
+                <p class="case-study__number">02</p>
+                <h3 class="case-study__title">Agentic AI &amp; MCP Automation</h3>
+                <p class="case-study__brief">Custom MCP servers exposing deterministic tools to AI systems for internal operations, content management, and developer tooling.</p>
+              </div>
+              <div class="case-study__toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div id="cs-2-body" class="case-study__body" aria-hidden="true">
+              <div class="case-study__content">
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Problem</h4>
+                  <p class="case-study__section-text">Internal teams needed AI-assisted workflows for operations, content management, and marketing — but the work required deterministic outcomes, not freeform LLM generation. Letting an AI improvise business-critical operations wasn't an option.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Approach</h4>
+                  <p class="case-study__section-text">Built custom MCP servers that exposed controlled, deterministic tools to AI systems. The design ensured that operations which needed to be predictable stayed predictable — the LLM could orchestrate, but couldn't override the guardrails.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">What I Built</h4>
+                  <p class="case-study__section-text">Multiple MCP servers providing tool access for content workflows, marketing operations, internal data processing, and developer productivity tooling. Each server defined strict tool interfaces with validation, authorization, and controlled execution paths.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technical Decisions</h4>
+                  <p class="case-study__section-text">Designed the system so deterministic operations remained deterministic. The AI layer handled orchestration and natural-language interaction, while the tool layer enforced business rules. This avoided the common failure mode of giving an LLM unconstrained access to production systems.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Outcome</h4>
+                  <p class="case-study__section-text">AI-driven workflows for multiple internal functions — operational, creative, and developer-focused — with the reliability and predictability of traditional tooling.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technologies</h4>
+                  <div class="case-study__tags">
+                    <span class="tag">MCP</span>
+                    <span class="tag">LLM Integration</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">API Design</span>
+                    <span class="tag">Workflow Automation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 3 -->
+          <article class="case-study reveal reveal-delay-2" data-expanded="false">
+            <div class="case-study__header" role="button" tabindex="0" aria-expanded="false" aria-controls="cs-3-body">
+              <div class="case-study__header-content">
+                <p class="case-study__number">03</p>
+                <h3 class="case-study__title">Secure Application Asset Delivery</h3>
+                <p class="case-study__brief">Access-controlled download systems routing protected assets through application logic to prevent unauthorized distribution.</p>
+              </div>
+              <div class="case-study__toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div id="cs-3-body" class="case-study__body" aria-hidden="true">
+              <div class="case-study__content">
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Problem</h4>
+                  <p class="case-study__section-text">Protected digital assets were accessible via direct URLs, allowing unauthorized downloads. The solution needed to enforce access control without disrupting the experience for legitimate users.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Approach</h4>
+                  <p class="case-study__section-text">Moved asset delivery behind application logic — every download request was validated against user authentication, authorization rules, and access policies before the asset was served.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">What I Built</h4>
+                  <p class="case-study__section-text">A secure download system that routed protected assets through the application layer, with authentication checks, time-limited access tokens, and logging for audit purposes.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technical Decisions</h4>
+                  <p class="case-study__section-text">Chose application-level routing over server-config-only approaches to maintain granular control over access policies. Balanced security with usability — authorized users experienced no friction.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Outcome</h4>
+                  <p class="case-study__section-text">Unauthorized asset access was effectively eliminated while maintaining a seamless experience for legitimate users.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technologies</h4>
+                  <div class="case-study__tags">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Access Control</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Authentication</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 4 -->
+          <article class="case-study reveal reveal-delay-3" data-expanded="false">
+            <div class="case-study__header" role="button" tabindex="0" aria-expanded="false" aria-controls="cs-4-body">
+              <div class="case-study__header-content">
+                <p class="case-study__number">04</p>
+                <h3 class="case-study__title">Bot &amp; Scraping Mitigation</h3>
+                <p class="case-study__brief">Diagnosed and blocked automated scraping that was consuming significant bandwidth, using application-level detection and response analysis.</p>
+              </div>
+              <div class="case-study__toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div id="cs-4-body" class="case-study__body" aria-hidden="true">
+              <div class="case-study__content">
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Problem</h4>
+                  <p class="case-study__section-text">Abnormal bandwidth consumption was traced to automated scraping. The traffic was sophisticated enough to evade simple bot-detection methods and was impacting server performance and costs.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Approach</h4>
+                  <p class="case-study__section-text">Analyzed request patterns, header signatures, geographic distribution, and behavioral indicators to build a detection model. Implemented multi-layered blocking at the application level.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">What I Built</h4>
+                  <p class="case-study__section-text">An application-level detection and blocking system using request and header analysis, IP and geographic checks, rate limiting, and behavioral pattern matching.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technical Decisions</h4>
+                  <p class="case-study__section-text">Built the detection at the application level rather than relying solely on WAF rules or third-party services, allowing granular tuning and rapid iteration as scraping patterns changed.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Outcome</h4>
+                  <p class="case-study__section-text">Automated scraping traffic was identified and blocked effectively, reducing abnormal bandwidth consumption while preserving access for legitimate users and search engines.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technologies</h4>
+                  <div class="case-study__tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Rate Limiting</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Request Analysis</span>
+                    <span class="tag">Server Administration</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 5 -->
+          <article class="case-study reveal reveal-delay-4" data-expanded="false">
+            <div class="case-study__header" role="button" tabindex="0" aria-expanded="false" aria-controls="cs-5-body">
+              <div class="case-study__header-content">
+                <p class="case-study__number">05</p>
+                <h3 class="case-study__title">WordPress + Laravel Architecture</h3>
+                <p class="case-study__brief">Dual-platform architecture where WordPress handled content authoring while Laravel controlled application rendering and delivery.</p>
+              </div>
+              <div class="case-study__toggle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div id="cs-5-body" class="case-study__body" aria-hidden="true">
+              <div class="case-study__content">
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Problem</h4>
+                  <p class="case-study__section-text">Content teams were productive in WordPress and didn't want to lose their authoring workflow, but the application needed rendering control, custom business logic, and architectural flexibility that WordPress alone couldn't provide.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Approach</h4>
+                  <p class="case-study__section-text">Created an architecture where WordPress remained the content-authoring environment while Laravel controlled application rendering, routing, and delivery. Used a dual-database approach to keep the systems cleanly separated.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">What I Built</h4>
+                  <p class="case-study__section-text">A dual-platform system with WordPress managing content and Laravel consuming it for rendering. The Laravel layer handled routing, templating, business logic, and performance optimization independently of WordPress.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technical Decisions</h4>
+                  <p class="case-study__section-text">Rather than using WordPress as a headless CMS with a separate API layer, connected Laravel directly to the WordPress database for content reads — reducing complexity and latency while maintaining clean architectural boundaries.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Outcome</h4>
+                  <p class="case-study__section-text">Content teams kept their WordPress workflow. The development team gained full control over the rendering layer, application logic, and infrastructure — without the compromises of building everything inside WordPress.</p>
+                </div>
+                <div class="case-study__section">
+                  <h4 class="case-study__section-title">Technologies</h4>
+                  <div class="case-study__tags">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">WordPress</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Dual Database</span>
+                    <span class="tag">Architecture</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROFESSIONAL EXPERIENCE ========== -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Experience</p>
+          <h2 id="experience-heading" class="section__title">Professional Timeline.</h2>
+        </div>
+
+        <div class="timeline" role="list" aria-label="Professional experience timeline">
+
+          <div class="timeline__item reveal" role="listitem">
+            <span class="timeline__badge">Current</span>
+            <p class="timeline__date">May 2026 – Present</p>
+            <h3 class="timeline__role">Chief Technology Officer</h3>
+            <p class="timeline__company">Item, Inc.</p>
+            <p class="timeline__desc">Leading technology strategy, architecture, and development across the organization's software platform and technical operations.</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-1" role="listitem">
+            <p class="timeline__date">December 2022 – May 2026</p>
+            <h3 class="timeline__role">Director of Web Technologies</h3>
+            <p class="timeline__company">Item, Inc.</p>
+            <p class="timeline__desc">Led web platform development, architecture decisions, AI integration, infrastructure, and developer team direction.</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-2" role="listitem">
+            <p class="timeline__date">June 2022 – December 2022</p>
+            <h3 class="timeline__role">Corporate Technology Developer</h3>
+            <p class="timeline__company">Biltmore Estate</p>
+            <p class="timeline__desc">Corporate web development and technology projects for the estate's digital properties.</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-3" role="listitem">
+            <p class="timeline__date">March 2022 – May 2022</p>
+            <h3 class="timeline__role">Project Manager</h3>
+            <p class="timeline__company">coach.today</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-4" role="listitem">
+            <p class="timeline__date">February 2018 – June 2022</p>
+            <h3 class="timeline__role">Freelance Web Developer</h3>
+            <p class="timeline__company">Cyber Leviathan</p>
+            <p class="timeline__desc">Full-lifecycle freelance development — client requirements, design, development, launch, and ongoing support.</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-5" role="listitem">
+            <p class="timeline__date">May 2021 – November 2021</p>
+            <h3 class="timeline__role">Web Designer</h3>
+            <p class="timeline__company">Mosaic Learning</p>
+          </div>
+
+          <div class="timeline__item reveal reveal-delay-6" role="listitem">
+            <p class="timeline__date">2007 – 2008</p>
+            <h3 class="timeline__role">Systems Test Engineer</h3>
+            <p class="timeline__company">Cobbler</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FREELANCE EXPERIENCE ========== -->
+    <section id="freelance" class="section section--surface" aria-labelledby="freelance-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Independent Work</p>
+          <h2 id="freelance-heading" class="section__title">Freelance &amp; Independent Experience.</h2>
+        </div>
+
+        <div class="freelance__content reveal">
+          <p class="freelance__lead">
+            Before moving into full-time technical leadership, I spent approximately eight years doing freelance web development — handling projects directly with clients from initial requirements through development, launch, and ongoing support.
+          </p>
+          <p class="freelance__text">
+            This wasn't side work or weekend projects. It was full-project-lifecycle development: understanding business requirements, producing mockups and technical plans, building the systems, deploying to production, and then maintaining and evolving them over time. I managed client relationships, project timelines, and technical decisions without a team behind me.
+          </p>
+          <p class="freelance__text">
+            That experience is directly relevant to consulting, contract, and fractional-leadership engagements. I've already spent years delivering technical work independently — scoping projects, making architectural decisions, communicating with non-technical stakeholders, and being accountable for the results.
+          </p>
+        </div>
+
+        <div class="freelance__highlights reveal">
+          <div class="freelance__highlight-item">
+            <p class="highlight-label">Duration</p>
+            <p class="highlight-value">~8 years of independent work</p>
+          </div>
+          <div class="freelance__highlight-item">
+            <p class="highlight-label">Scope</p>
+            <p class="highlight-value">Full project lifecycle — requirements to production</p>
+          </div>
+          <div class="freelance__highlight-item">
+            <p class="highlight-label">Relevance</p>
+            <p class="highlight-value">Direct experience delivering independently</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TECHNOLOGY ========== -->
+    <section id="technology" class="section" aria-labelledby="technology-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Technology</p>
+          <h2 id="technology-heading" class="section__title">Tools &amp; Platforms.</h2>
+          <p class="section__subtitle">Technologies I use in production, organized by function rather than listed alphabetically.</p>
+        </div>
+
+        <div class="tech__grid">
+
+          <div class="tech-group reveal reveal-delay-1">
+            <h3 class="tech-group__title">Languages &amp; Frameworks</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">PHP</span></li>
+              <li><span class="tech-tag">Laravel</span></li>
+              <li><span class="tech-tag">JavaScript</span></li>
+              <li><span class="tech-tag">Vue.js</span></li>
+              <li><span class="tech-tag">HTML5</span></li>
+              <li><span class="tech-tag">CSS / SCSS</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-2">
+            <h3 class="tech-group__title">Data &amp; APIs</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">MySQL</span></li>
+              <li><span class="tech-tag">REST APIs</span></li>
+              <li><span class="tech-tag">Database Design</span></li>
+              <li><span class="tech-tag">WordPress</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-3">
+            <h3 class="tech-group__title">AI &amp; Automation</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">MCP Servers</span></li>
+              <li><span class="tech-tag">LLM Integration</span></li>
+              <li><span class="tech-tag">Agentic Workflows</span></li>
+              <li><span class="tech-tag">AI Tooling</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-4">
+            <h3 class="tech-group__title">Infrastructure</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">Apache / WHM</span></li>
+              <li><span class="tech-tag">VPS Administration</span></li>
+              <li><span class="tech-tag">DNS / SSL</span></li>
+              <li><span class="tech-tag">CI/CD</span></li>
+              <li><span class="tech-tag">Docker</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-5">
+            <h3 class="tech-group__title">Workflow &amp; Collaboration</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">Jira</span></li>
+              <li><span class="tech-tag">Confluence</span></li>
+              <li><span class="tech-tag">Figma</span></li>
+              <li><span class="tech-tag">Git</span></li>
+            </ul>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-6">
+            <h3 class="tech-group__title">Specializations</h3>
+            <ul class="tech-group__list" role="list">
+              <li><span class="tech-tag">Technical SEO</span></li>
+              <li><span class="tech-tag">Accessibility</span></li>
+              <li><span class="tech-tag">Performance</span></li>
+              <li><span class="tech-tag">Security</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WORKING WITH ME ========== -->
+    <section id="working-with-me" class="section section--surface" aria-labelledby="working-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Engagement</p>
+          <h2 id="working-heading" class="section__title">Working With Me.</h2>
+        </div>
+
+        <div class="working__content reveal">
+          <p class="working__lead">
+            I work best on technically complex projects where the problem extends beyond simply implementing a ticket.
+          </p>
+          <p class="working__text">
+            My background is especially useful when architecture, implementation, business requirements, and long-term maintainability all need to be considered together. I'm most effective when I can understand the business context behind the technical decisions — not just the spec, but why the spec exists.
+          </p>
+          <p class="working__text">
+            If you're dealing with a system that needs careful technical thinking — whether that's a new build, a legacy modernization, an AI integration, or a technical leadership gap — I'm interested in the conversation.
+          </p>
+          <p class="working__text">
+            Inquiries regarding software engineering, architecture, technical leadership, and consulting can be made through the <a href="contact.html">contact page</a>.
+          </p>
+          <div class="working__cta">
+            <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+            <a href="resume.html" class="btn btn--secondary">View Résumé</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__name">Chris Harlow</span>
+        <p class="footer__copyright">&copy; 2026 Chris Harlow. All rights reserved.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <ul class="footer__nav" role="list">
+          <li><a href="#about" class="footer__link">About</a></li>
+          <li><a href="#work" class="footer__link">Work</a></li>
+          <li><a href="resume.html" class="footer__link">Résumé</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="#" class="footer__social-link" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/case-studies.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

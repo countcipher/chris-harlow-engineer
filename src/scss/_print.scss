@@ -1,0 +1,85 @@
+// ============================================================
+// PRINT STYLES — Résumé page
+// ============================================================
+
+@media print {
+  // Hide non-essential elements
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .mobile-nav,
+  .mobile-nav__overlay,
+  .resume__download,
+  .btn,
+  .hero__decoration {
+    display: none !important;
+  }
+
+  // Reset background/colors for print
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  * {
+    color: #1a1a1a !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #ccc !important;
+  }
+
+  // Remove padding from fixed-header offset
+  .resume-page {
+    padding-top: 0 !important;
+  }
+
+  // Tighter spacing
+  .section {
+    padding-block: 1rem !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  // Accent color in print
+  .resume__section-title {
+    border-bottom-color: #333 !important;
+  }
+
+  .resume__title,
+  .resume-entry__company {
+    color: #555 !important;
+  }
+
+  // Links — show URL
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    color: #666 !important;
+  }
+
+  // But not for nav links
+  .nav__link::after,
+  .footer__link::after {
+    content: none;
+  }
+
+  // Page breaks
+  .resume__section {
+    page-break-inside: avoid;
+  }
+
+  .resume-entry {
+    page-break-inside: avoid;
+  }
+
+  // Ensure proper margins
+  @page {
+    margin: 1.5cm 2cm;
+  }
+}

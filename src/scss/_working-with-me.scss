@@ -1,0 +1,26 @@
+// ============================================================
+// WORKING WITH ME
+// ============================================================
+@use 'variables' as *;
+
+.working__content {
+  max-width: 48rem;
+}
+
+.working__lead {
+  font-size: clamp(1.1rem, 0.8vw + 0.8rem, 1.25rem);
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  line-height: 1.8;
+  margin-bottom: $space-xl;
+}
+
+.working__text {
+  font-size: $type-body;
+  color: $color-text-secondary;
+  line-height: 1.8;
+}
+
+.working__cta {
+  margin-top: $space-2xl;
+}

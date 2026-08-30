@@ -1,0 +1,105 @@
+// ============================================================
+// CAPABILITIES / WHAT I DO SECTION
+// ============================================================
+@use 'variables' as *;
+
+.capabilities__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.capability-card {
+  position: relative;
+  padding: clamp($space-lg, 3vw, $space-2xl);
+  background: $color-bg-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  transition: border-color $transition-base, transform $transition-base, box-shadow $transition-base;
+  overflow: hidden;
+
+  // Subtle top-accent line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      $color-accent-primary,
+      transparent
+    );
+    opacity: 0;
+    transition: opacity $transition-base;
+  }
+
+  &:hover {
+    border-color: rgba($color-accent-primary, 0.2);
+    transform: translateY(-4px);
+    box-shadow: $shadow-md, 0 0 30px $color-accent-glow;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.capability-card__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: $space-lg;
+  color: $color-accent-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5;
+  }
+}
+
+.capability-card__title {
+  font-family: $font-display;
+  font-size: $type-h4;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-md;
+}
+
+.capability-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-size: $type-body-sm;
+    color: $color-text-secondary;
+    padding: $space-xs 0;
+    padding-left: $space-lg;
+    position: relative;
+    margin-bottom: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 1px;
+      background: $color-accent-primary;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// ============================================================
+// FREELANCE / INDEPENDENT EXPERIENCE
+// ============================================================
+@use 'variables' as *;
+
+.freelance__content {
+  max-width: 48rem;
+}
+
+.freelance__lead {
+  font-size: clamp(1.1rem, 0.8vw + 0.8rem, 1.25rem);
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  line-height: 1.8;
+  margin-bottom: $space-xl;
+}
+
+.freelance__text {
+  font-size: $type-body;
+  color: $color-text-secondary;
+  line-height: 1.8;
+}
+
+.freelance__highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+  margin-top: $space-2xl;
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.freelance__highlight-item {
+  padding: $space-lg;
+  background: $color-bg-surface-2;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+
+  .highlight-label {
+    font-family: $font-mono;
+    font-size: $type-xs;
+    color: $color-accent-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: $space-sm;
+  }
+
+  .highlight-value {
+    font-family: $font-display;
+    font-size: $type-body;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: 0;
+  }
+}

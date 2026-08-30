@@ -1,0 +1,118 @@
+// ============================================================
+// BASE STYLES — Typography, Links, Selection
+// ============================================================
+@use 'variables' as *;
+
+body {
+  font-family: $font-body;
+  font-size: $type-body;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  overflow-x: hidden;
+}
+
+// --- Headings ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: $font-weight-bold;
+  line-height: 1.15;
+  color: $color-text-primary;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: $type-h1; }
+h2 { font-size: $type-h2; margin-bottom: $space-lg; }
+h3 { font-size: $type-h3; margin-bottom: $space-md; }
+h4 { font-size: $type-h4; margin-bottom: $space-sm; }
+
+// --- Paragraphs ---
+p {
+  margin-bottom: $space-md;
+  color: $color-text-secondary;
+  line-height: 1.7;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// --- Links ---
+a {
+  color: $color-accent-primary;
+  transition: color $transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent-light;
+  }
+}
+
+// --- Strong / emphasis ---
+strong, b {
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+em {
+  font-style: italic;
+}
+
+// --- Code ---
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  background: $color-bg-surface-2;
+  border-radius: $radius-sm;
+  color: $color-accent-primary;
+}
+
+// --- Selection ---
+::selection {
+  background: rgba($color-accent-primary, 0.3);
+  color: $color-text-primary;
+}
+
+// --- Horizontal rule ---
+hr {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: $space-2xl 0;
+}
+
+// --- Lists ---
+ul, ol {
+  padding-left: $space-lg;
+  margin-bottom: $space-md;
+
+  li {
+    margin-bottom: $space-xs;
+    color: $color-text-secondary;
+    line-height: 1.7;
+  }
+}
+
+// --- Scrollbar (Webkit) ---
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-bg-surface-3;
+  border-radius: $radius-pill;
+
+  &:hover {
+    background: $color-bg-surface-4;
+  }
+}
+
+// Firefox scrollbar
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $color-bg-surface-3 $color-bg-primary;
+}

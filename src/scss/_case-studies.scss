@@ -1,0 +1,147 @@
+// ============================================================
+// CASE STUDIES / SELECTED WORK
+// ============================================================
+@use 'variables' as *;
+
+.case-studies__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+}
+
+.case-study {
+  background: $color-bg-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+  }
+}
+
+.case-study__header {
+  padding: clamp($space-lg, 3vw, $space-2xl);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-md;
+  min-height: 44px;
+  user-select: none;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.015);
+  }
+}
+
+.case-study__header-content {
+  flex: 1;
+}
+
+.case-study__number {
+  font-family: $font-mono;
+  font-size: $type-xs;
+  color: $color-accent-primary;
+  letter-spacing: 0.1em;
+  margin-bottom: $space-sm;
+}
+
+.case-study__title {
+  font-family: $font-display;
+  font-size: $type-h3;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-sm;
+}
+
+.case-study__brief {
+  font-size: $type-body-sm;
+  color: $color-text-secondary;
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+
+.case-study__toggle {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-text-muted;
+  transition: color $transition-fast, border-color $transition-fast, transform $transition-base;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform $transition-base;
+  }
+
+  .case-study__header:hover & {
+    color: $color-accent-primary;
+    border-color: $color-border-accent;
+  }
+}
+
+// Expanded state
+.case-study[data-expanded='true'] {
+  border-color: rgba($color-accent-primary, 0.15);
+  box-shadow: 0 0 30px $color-accent-glow;
+
+  .case-study__toggle svg {
+    transform: rotate(180deg);
+  }
+}
+
+.case-study__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $transition-slow, opacity $transition-base;
+  opacity: 0;
+
+  .case-study[data-expanded='true'] & {
+    opacity: 1;
+  }
+}
+
+.case-study__content {
+  padding: 0 clamp($space-lg, 3vw, $space-2xl) clamp($space-lg, 3vw, $space-2xl);
+  border-top: 1px solid $color-border;
+}
+
+.case-study__section {
+  padding-block: $space-lg;
+
+  & + & {
+    border-top: 1px solid $color-border;
+  }
+}
+
+.case-study__section-title {
+  font-family: $font-display;
+  font-size: $type-body-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-accent-primary;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: $space-md;
+}
+
+.case-study__section-text {
+  font-size: $type-body;
+  color: $color-text-secondary;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.case-study__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  padding-top: $space-sm;
+}

@@ -1,0 +1,181 @@
+// ============================================================
+// HERO SECTION
+// ============================================================
+@use 'variables' as *;
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem; // offset fixed header
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__content {
+  position: relative;
+  z-index: $z-base;
+  max-width: 52rem;
+}
+
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  font-family: $font-mono;
+  font-size: $type-xs;
+  font-weight: $font-weight-medium;
+  color: $color-accent-primary;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: $space-xl;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: $color-accent-primary;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      animation: none;
+    }
+  }
+}
+
+.hero__title {
+  font-family: $font-display;
+  font-size: $type-hero;
+  font-weight: $font-weight-extrabold;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: $color-text-primary;
+  margin-bottom: $space-xl;
+
+  .hero__title-accent {
+    color: $color-accent-primary;
+    position: relative;
+  }
+}
+
+.hero__description {
+  font-size: clamp(1.05rem, 0.8vw + 0.75rem, 1.2rem);
+  color: $color-text-secondary;
+  line-height: 1.8;
+  max-width: 44ch;
+  margin-bottom: $space-2xl;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  margin-bottom: $space-3xl;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2xl;
+  padding-top: $space-xl;
+  border-top: 1px solid $color-border;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.hero__stat-value {
+  font-family: $font-display;
+  font-size: $type-h3;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.hero__stat-label {
+  font-size: $type-small;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+// --- Decorative elements ---
+.hero__decoration {
+  position: absolute;
+  right: -5%;
+  top: 15%;
+  width: clamp(300px, 40vw, 600px);
+  height: clamp(300px, 40vw, 600px);
+  pointer-events: none;
+  z-index: 0;
+
+  @media (max-width: $bp-md) {
+    opacity: 0.15;
+    right: -20%;
+    top: 5%;
+  }
+}
+
+.hero__grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+
+  // Grid of dots using radial gradient
+  background-image: radial-gradient(
+    circle,
+    rgba($color-accent-primary, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+.hero__glow {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  background: radial-gradient(
+    circle,
+    rgba($color-accent-primary, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.hero__ring {
+  position: absolute;
+  inset: 10%;
+  border: 1px solid rgba($color-accent-primary, 0.12);
+  border-radius: 50%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 12%;
+    border: 1px solid rgba($color-accent-primary, 0.06);
+    border-radius: 50%;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}

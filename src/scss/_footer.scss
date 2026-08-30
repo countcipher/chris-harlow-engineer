@@ -1,0 +1,95 @@
+// ============================================================
+// FOOTER
+// ============================================================
+@use 'variables' as *;
+
+.site-footer {
+  padding-block: $space-3xl;
+  border-top: 1px solid $color-border;
+  background: $color-bg-surface-1;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+
+  @media (min-width: $bp-md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.footer__name {
+  font-family: $font-display;
+  font-size: $type-body;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.footer__copyright {
+  font-size: $type-small;
+  color: $color-text-muted;
+  margin-bottom: 0;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md $space-xl;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__link {
+  font-size: $type-body-sm;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: color $transition-fast;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent-primary;
+  }
+}
+
+.footer__social {
+  display: flex;
+  gap: $space-md;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: color $transition-fast, border-color $transition-fast, background $transition-fast;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent-primary;
+    border-color: $color-border-accent;
+    background: rgba($color-accent-primary, 0.05);
+  }
+}
