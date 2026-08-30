@@ -1,19 +1,19 @@
 // ============================================================
 // RÉSUMÉ PAGE
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .resume-page {
   padding-top: 6rem; // offset fixed header
 }
 
 .resume__header {
-  margin-bottom: $space-3xl;
+  margin-bottom: v.$space-3xl;
   display: flex;
   flex-direction: column;
-  gap: $space-lg;
+  gap: v.$space-lg;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: v.$bp-md) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -25,25 +25,27 @@
 }
 
 .resume__name {
-  font-family: $font-display;
-  font-size: $type-h1;
-  font-weight: $font-weight-extrabold;
-  color: $color-text-primary;
-  margin-bottom: $space-sm;
+  font-family: v.$font-display;
+  font-size: v.$type-h1;
+  font-weight: v.$font-weight-extrabold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
+  letter-spacing: -0.03em;
 }
 
 .resume__title {
-  font-size: $type-h4;
-  color: $color-accent-primary;
-  font-weight: $font-weight-medium;
-  margin-bottom: $space-md;
+  font-family: v.$font-display;
+  font-size: v.$type-h4;
+  color: v.$color-accent-primary;
+  font-weight: v.$font-weight-semibold;
+  margin-bottom: v.$space-md;
 }
 
 .resume__summary {
-  font-size: $type-body;
-  color: $color-text-secondary;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
   line-height: 1.8;
-  max-width: 60ch;
+  max-width: 65ch;
 }
 
 .resume__download {
@@ -52,25 +54,26 @@
 
 // Resume sections
 .resume__section {
-  margin-bottom: $space-3xl;
+  margin-bottom: v.$space-3xl;
 }
 
 .resume__section-title {
-  font-family: $font-display;
-  font-size: $type-h3;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  margin-bottom: $space-xl;
-  padding-bottom: $space-sm;
-  border-bottom: 2px solid $color-accent-primary;
+  font-family: v.$font-display;
+  font-size: v.$type-h3;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-xl;
+  padding-bottom: v.$space-sm;
+  border-bottom: 2px solid v.$color-accent-primary;
   display: inline-block;
+  letter-spacing: -0.02em;
 }
 
 // Experience entries on resume
 .resume-entry {
-  margin-bottom: $space-xl;
-  padding-bottom: $space-xl;
-  border-bottom: 1px solid $color-border;
+  margin-bottom: v.$space-xl;
+  padding-bottom: v.$space-xl;
+  border-bottom: 1px solid v.$color-border;
 
   &:last-child {
     border-bottom: none;
@@ -82,10 +85,10 @@
 .resume-entry__header {
   display: flex;
   flex-direction: column;
-  gap: $space-xs;
-  margin-bottom: $space-md;
+  gap: v.$space-xs;
+  margin-bottom: v.$space-md;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: v.$bp-md) {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
@@ -93,49 +96,57 @@
 }
 
 .resume-entry__role {
-  font-family: $font-display;
-  font-size: $type-h4;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
+  font-family: v.$font-display;
+  font-size: v.$type-h4;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
 }
 
 .resume-entry__date {
-  font-family: $font-mono;
-  font-size: $type-small;
-  color: $color-text-muted;
+  font-family: v.$font-mono;
+  font-size: v.$type-small;
+  color: v.$color-accent-primary;
 }
 
 .resume-entry__company {
-  font-size: $type-body;
-  color: $color-accent-primary;
-  margin-bottom: $space-sm;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
+  font-weight: v.$font-weight-semibold;
+  margin-bottom: v.$space-sm;
 }
 
 .resume-entry__desc {
-  font-size: $type-body-sm;
-  color: $color-text-secondary;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-muted;
   line-height: 1.7;
 }
 
 // Skills grid on resume
 .resume__skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: $space-lg;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: v.$space-lg;
 }
 
 .resume__skill-group {
-  h4 {
-    font-size: $type-body-sm;
-    font-weight: $font-weight-semibold;
-    color: $color-text-primary;
-    margin-bottom: $space-sm;
+  padding: v.$space-lg;
+  background: v.$color-bg-surface-1;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+
+  h3 {
+    font-family: v.$font-display;
+    font-size: v.$type-body;
+    font-weight: v.$font-weight-bold;
+    color: v.$color-accent-primary;
+    margin-bottom: v.$space-sm;
   }
 
   p {
-    font-size: $type-body-sm;
-    color: $color-text-secondary;
+    font-size: v.$type-body-sm;
+    color: v.$color-text-secondary;
     line-height: 1.7;
+    margin-bottom: 0;
   }
 }
 
@@ -143,30 +154,30 @@
 .resume__credentials {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-lg;
+  gap: v.$space-lg;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: v.$bp-md) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 .resume__credential {
-  padding: $space-lg;
-  background: $color-bg-surface-1;
-  border: 1px solid $color-border;
-  border-radius: $radius-lg;
+  padding: v.$space-lg;
+  background: v.$color-bg-surface-1;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
 }
 
 .resume__credential-title {
-  font-family: $font-display;
-  font-size: $type-body;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $space-xs;
+  font-family: v.$font-display;
+  font-size: v.$type-body;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-xs;
 }
 
 .resume__credential-detail {
-  font-size: $type-body-sm;
-  color: $color-text-secondary;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-secondary;
   margin-bottom: 0;
 }

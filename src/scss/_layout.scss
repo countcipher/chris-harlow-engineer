@@ -1,84 +1,96 @@
 // ============================================================
 // LAYOUT — Container, Sections, Grid
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 // --- Container ---
 .container {
   width: 100%;
-  max-width: $container-max;
+  max-width: v.$container-max;
   margin-inline: auto;
-  padding-inline: clamp($space-lg, 5vw, $space-3xl);
+  padding-inline: clamp(v.$space-lg, 5vw, v.$space-3xl);
 }
 
 .container--wide {
-  max-width: $container-wide;
+  max-width: v.$container-wide;
 }
 
 .container--narrow {
-  max-width: $container-narrow;
+  max-width: v.$container-narrow;
 }
 
 // --- Section ---
 .section {
-  padding-block: $section-padding;
+  padding-block: v.$section-padding;
   position: relative;
 }
 
 .section--surface {
-  background-color: $color-bg-surface-1;
+  background-color: v.$color-bg-surface-1;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
 }
 
 .section--elevated {
-  background-color: $color-bg-surface-2;
+  background-color: v.$color-bg-surface-2;
 }
 
 // Section header with accent line
 .section__header {
-  margin-bottom: clamp($space-2xl, 4vw, $space-4xl);
+  margin-bottom: clamp(v.$space-2xl, 4vw, v.$space-4xl);
   position: relative;
 }
 
 .section__label {
-  display: inline-block;
-  font-family: $font-mono;
-  font-size: $type-xs;
-  font-weight: $font-weight-medium;
-  color: $color-accent-primary;
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-sm;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-accent-primary;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: $space-md;
+  letter-spacing: 0.18em;
+  margin-bottom: v.$space-md;
   position: relative;
-  padding-left: $space-xl;
+  padding: 0.35em 0.9em;
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  border-radius: v.$radius-pill;
+  backdrop-filter: blur(8px);
 
   &::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 1.25rem;
-    height: 1px;
-    background: $color-accent-primary;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: v.$color-accent-primary;
+    box-shadow: 0 0 8px v.$color-accent-primary;
   }
 }
 
 .section__title {
-  font-family: $font-display;
-  font-weight: $font-weight-extrabold;
+  font-family: v.$font-display;
+  font-weight: v.$font-weight-extrabold;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section__subtitle {
-  font-size: $type-body;
-  color: $color-text-secondary;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
   max-width: 60ch;
-  margin-top: $space-md;
+  margin-top: v.$space-md;
   line-height: 1.7;
 }
 
 // --- Grid systems ---
 .grid {
   display: grid;
-  gap: $space-xl;
+  gap: v.$space-xl;
 }
 
 .grid--2 {
@@ -97,7 +109,7 @@
 .grid--asym {
   grid-template-columns: 1fr;
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: v.$bp-lg) {
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
   }
@@ -120,30 +132,10 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    $color-border 20%,
-    $color-border 80%,
+    v.$color-border 20%,
+    rgba(0, 240, 255, 0.25) 50%,
+    v.$color-border 80%,
     transparent 100%
   );
-  margin-block: $space-md;
-}
-
-// --- Section separator (angled) ---
-.section-sep {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-
-  svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: clamp(40px, 5vw, 80px);
-  }
-
-  .shape-fill {
-    fill: $color-bg-primary;
-  }
+  margin-block: v.$space-xl;
 }

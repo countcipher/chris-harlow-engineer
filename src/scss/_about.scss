@@ -1,14 +1,14 @@
 // ============================================================
 // ABOUT SECTION
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .about__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp($space-2xl, 5vw, $space-4xl);
+  gap: clamp(v.$space-2xl, 5vw, v.$space-4xl);
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: v.$bp-lg) {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: start;
   }
@@ -16,46 +16,61 @@
 
 .about__content {
   p {
-    font-size: $type-body;
+    font-size: v.$type-body;
     line-height: 1.8;
   }
 }
 
 .about__lead {
-  font-size: clamp(1.1rem, 0.8vw + 0.8rem, 1.25rem) !important;
-  color: $color-text-primary !important;
-  font-weight: $font-weight-medium;
-  margin-bottom: $space-xl !important;
+  font-size: clamp(1.15rem, 0.8vw + 0.85rem, 1.35rem) !important;
+  color: v.$color-text-primary !important;
+  font-weight: v.$font-weight-medium;
+  line-height: 1.7 !important;
+  margin-bottom: v.$space-xl !important;
 }
 
 .about__highlights {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-lg;
+  gap: v.$space-lg;
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: v.$bp-sm) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 .about__highlight {
-  padding: $space-lg;
-  background: $color-bg-surface-2;
-  border-radius: $radius-lg;
-  border: 1px solid $color-border;
-  transition: border-color $transition-base, transform $transition-base;
+  padding: v.$space-lg;
+  background: v.$color-bg-surface-2;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+  transition: border-color v.$transition-base, transform v.$transition-base, box-shadow v.$transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.06), transparent 70%);
+    pointer-events: none;
+  }
 
   &:hover {
-    border-color: $color-border-hover;
-    transform: translateY(-2px);
+    border-color: v.$color-border-hover;
+    transform: translateY(-3px);
+    box-shadow: v.$shadow-md, 0 0 20px rgba(0, 240, 255, 0.1);
   }
 }
 
 .about__highlight-icon {
   width: 2.5rem;
   height: 2.5rem;
-  margin-bottom: $space-md;
-  color: $color-accent-primary;
+  margin-bottom: v.$space-md;
+  color: v.$color-accent-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
     width: 100%;
@@ -64,15 +79,15 @@
 }
 
 .about__highlight-title {
-  font-family: $font-display;
-  font-size: $type-h4;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $space-sm;
+  font-family: v.$font-display;
+  font-size: v.$type-h4;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
 }
 
 .about__highlight-text {
-  font-size: $type-body-sm;
-  color: $color-text-secondary;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-secondary;
   margin-bottom: 0;
 }

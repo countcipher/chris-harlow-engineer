@@ -1,23 +1,25 @@
 // ============================================================
 // HEADER & NAVIGATION
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: $z-sticky;
-  padding: $space-md 0;
-  transition: background-color $transition-base, box-shadow $transition-base, padding $transition-base;
+  z-index: v.$z-sticky;
+  padding: v.$space-md 0;
+  transition: background-color v.$transition-base, box-shadow v.$transition-base, padding v.$transition-base, border-color v.$transition-base;
+  border-bottom: 1px solid transparent;
 
   &.is-scrolled {
-    background-color: rgba($color-bg-primary, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 1px 0 $color-border;
-    padding: $space-sm 0;
+    background-color: rgba(8, 11, 17, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid v.$color-border;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: v.$space-sm 0;
   }
 }
 
@@ -29,21 +31,25 @@
 
 // --- Logo / Name ---
 .header__logo {
-  font-family: $font-display;
-  font-weight: $font-weight-bold;
-  font-size: clamp(1.1rem, 1.2vw + 0.5rem, 1.35rem);
-  color: $color-text-primary;
+  font-family: v.$font-display;
+  font-weight: v.$font-weight-extrabold;
+  font-size: clamp(1.15rem, 1.2vw + 0.5rem, 1.4rem);
+  color: v.$color-text-primary;
   text-decoration: none;
   letter-spacing: -0.02em;
-  transition: color $transition-fast;
+  transition: color v.$transition-fast;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1em;
 
   .logo__accent {
-    color: $color-accent-primary;
+    color: v.$color-accent-primary;
+    text-shadow: 0 0 10px v.$color-accent-glow;
   }
 
   &:hover {
-    color: $color-accent-primary;
+    color: v.$color-accent-light;
   }
 }
 
@@ -51,7 +57,7 @@
 .header__nav {
   display: none;
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: v.$bp-lg) {
     display: block;
   }
 }
@@ -59,21 +65,21 @@
 .nav__list {
   display: flex;
   align-items: center;
-  gap: $space-xl;
+  gap: v.$space-xl;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .nav__link {
-  font-family: $font-body;
-  font-size: $type-body-sm;
-  font-weight: $font-weight-medium;
-  color: $color-text-secondary;
+  font-family: v.$font-body;
+  font-size: v.$type-body-sm;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-secondary;
   text-decoration: none;
-  padding: $space-xs 0;
+  padding: v.$space-xs 0;
   position: relative;
-  transition: color $transition-fast;
+  transition: color v.$transition-fast;
   white-space: nowrap;
 
   &::after {
@@ -83,23 +89,26 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: $color-accent-primary;
-    transition: width $transition-base;
+    background: v.$gradient-accent;
+    transition: width v.$transition-base;
     border-radius: 1px;
+    box-shadow: 0 0 8px v.$color-accent-primary;
   }
 
   &:hover,
   &:focus-visible,
-  &[aria-current='true'] {
-    color: $color-text-primary;
+  &[aria-current='true'],
+  &[aria-current='page'] {
+    color: v.$color-text-primary;
 
     &::after {
       width: 100%;
     }
   }
 
-  &[aria-current='true'] {
-    color: $color-accent-primary;
+  &[aria-current='true'],
+  &[aria-current='page'] {
+    color: v.$color-accent-primary;
   }
 }
 
@@ -111,25 +120,32 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
   cursor: pointer;
   position: relative;
-  z-index: $z-overlay + 1;
+  z-index: v.$z-overlay + 1;
+  transition: all v.$transition-fast;
 
-  @media (min-width: $bp-lg) {
+  &:hover {
+    border-color: v.$color-accent-primary;
+    background: rgba(0, 240, 255, 0.08);
+  }
+
+  @media (min-width: v.$bp-lg) {
     display: none;
   }
 }
 
 .toggle__bar {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
-  background: $color-text-primary;
+  background: v.$color-text-primary;
   border-radius: 2px;
   position: relative;
-  transition: background $transition-fast;
+  transition: background v.$transition-fast;
 
   &::before,
   &::after {
@@ -138,9 +154,9 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: $color-text-primary;
+    background: v.$color-text-primary;
     border-radius: 2px;
-    transition: transform $transition-base, top $transition-base;
+    transition: transform v.$transition-base, top v.$transition-base;
   }
 
   &::before {
@@ -160,11 +176,13 @@
     &::before {
       top: 0;
       transform: rotate(45deg);
+      background: v.$color-accent-primary;
     }
 
     &::after {
       top: 0;
       transform: rotate(-45deg);
+      background: v.$color-accent-primary;
     }
   }
 }
@@ -176,14 +194,15 @@
   right: 0;
   bottom: 0;
   width: min(85vw, 400px);
-  background: $color-bg-surface-1;
-  z-index: $z-overlay;
-  padding: 5rem $space-2xl $space-2xl;
+  background: v.$color-bg-surface-1;
+  z-index: v.$z-overlay;
+  padding: 5.5rem v.$space-2xl v.$space-2xl;
   transform: translateX(100%);
-  transition: transform $transition-slow;
+  transition: transform v.$transition-slow;
   visibility: hidden;
   overflow-y: auto;
-  border-left: 1px solid $color-border;
+  border-left: 1px solid v.$color-border;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
 
   &.is-open {
     transform: translateX(0);
@@ -194,11 +213,12 @@
 .mobile-nav__overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: $z-overlay - 1;
+  background: rgba(4, 7, 12, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: v.$z-overlay - 1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity $transition-base, visibility $transition-base;
+  transition: opacity v.$transition-base, visibility v.$transition-base;
 
   &.is-visible {
     opacity: 1;
@@ -212,30 +232,31 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: $space-xs;
+  gap: v.$space-xs;
 }
 
 .mobile-nav__link {
   display: block;
-  font-family: $font-display;
-  font-size: $type-h3;
-  font-weight: $font-weight-semibold;
-  color: $color-text-secondary;
+  font-family: v.$font-display;
+  font-size: v.$type-h3;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-secondary;
   text-decoration: none;
-  padding: $space-md $space-sm;
-  border-radius: $radius-md;
-  transition: color $transition-fast, background $transition-fast;
+  padding: v.$space-md v.$space-sm;
+  border-radius: v.$radius-md;
+  transition: color v.$transition-fast, background v.$transition-fast;
   min-height: 44px;
   display: flex;
   align-items: center;
 
   &:hover,
   &:focus-visible {
-    color: $color-text-primary;
-    background: rgba(255, 255, 255, 0.03);
+    color: v.$color-text-primary;
+    background: rgba(0, 240, 255, 0.05);
   }
 
-  &[aria-current='true'] {
-    color: $color-accent-primary;
+  &[aria-current='true'],
+  &[aria-current='page'] {
+    color: v.$color-accent-primary;
   }
 }

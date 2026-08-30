@@ -1,43 +1,52 @@
 // ============================================================
 // TECHNOLOGY SECTION
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .tech__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-xl;
+  gap: v.$space-xl;
 
-  @media (min-width: $bp-md) {
+  @media (min-width: v.$bp-md) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: $bp-xl) {
+  @media (min-width: v.$bp-xl) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .tech-group {
-  padding: $space-lg;
-  background: $color-bg-surface-1;
-  border: 1px solid $color-border;
-  border-radius: $radius-lg;
+  padding: v.$space-xl;
+  background: v.$color-bg-surface-1;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-xl;
+  transition: all v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-border-hover;
+    transform: translateY(-2px);
+    box-shadow: v.$shadow-md;
+  }
 }
 
 .tech-group__title {
-  font-family: $font-display;
-  font-size: $type-body-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-  margin-bottom: $space-md;
-  padding-bottom: $space-sm;
-  border-bottom: 1px solid $color-border;
+  font-family: v.$font-display;
+  font-size: v.$type-body-sm;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-md;
+  padding-bottom: v.$space-sm;
+  border-bottom: 1px solid v.$color-border;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .tech-group__list {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-sm;
+  gap: v.$space-sm;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -50,20 +59,22 @@
 .tech-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.35em 0.85em;
-  font-family: $font-mono;
-  font-size: $type-xs;
-  font-weight: $font-weight-medium;
-  color: $color-text-secondary;
-  background: $color-bg-surface-2;
-  border: 1px solid $color-border;
-  border-radius: $radius-pill;
-  transition: color $transition-fast, border-color $transition-fast, background $transition-fast;
+  padding: 0.4em 0.9em;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-secondary;
+  background: v.$color-bg-surface-2;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-pill;
+  transition: all v.$transition-fast;
   line-height: 1.5;
 
   &:hover {
-    color: $color-accent-primary;
-    border-color: rgba($color-accent-primary, 0.2);
-    background: rgba($color-accent-primary, 0.05);
+    color: v.$color-accent-primary;
+    border-color: rgba(0, 240, 255, 0.4);
+    background: rgba(0, 240, 255, 0.08);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+    transform: translateY(-1px);
   }
 }

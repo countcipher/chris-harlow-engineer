@@ -1,7 +1,7 @@
 // ============================================================
 // UTILITY CLASSES
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 // Screen-reader only — visually hidden but accessible
 .sr-only {
@@ -20,21 +20,22 @@
 .skip-link {
   position: absolute;
   top: -100%;
-  left: $space-md;
-  z-index: $z-toast;
-  padding: $space-sm $space-lg;
-  background: $color-accent-primary;
-  color: $color-text-inverse;
-  font-family: $font-body;
-  font-weight: $font-weight-semibold;
-  font-size: $type-body-sm;
-  border-radius: 0 0 $radius-md $radius-md;
-  transition: top $transition-fast;
+  left: v.$space-md;
+  z-index: v.$z-toast;
+  padding: v.$space-sm v.$space-lg;
+  background: v.$color-accent-primary;
+  color: v.$color-text-inverse;
+  font-family: v.$font-body;
+  font-weight: v.$font-weight-semibold;
+  font-size: v.$type-body-sm;
+  border-radius: 0 0 v.$radius-md v.$radius-md;
+  transition: top v.$transition-fast;
   text-decoration: none;
+  box-shadow: v.$shadow-glow;
 
   &:focus {
     top: 0;
-    outline: 2px solid $color-text-primary;
+    outline: 2px solid #FFFFFF;
     outline-offset: 2px;
   }
 }
@@ -46,11 +47,17 @@
 
 // Text utilities
 .text-accent {
-  color: $color-accent-primary;
+  color: v.$color-accent-primary;
+}
+
+.text-gradient {
+  background: v.$gradient-accent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-secondary {
-  color: $color-text-secondary;
+  color: v.$color-text-secondary;
 }
 
 .text-center {
@@ -62,15 +69,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: $space-sm;
+  gap: v.$space-sm;
   padding: 0.85em 1.75em;
-  font-family: $font-body;
-  font-size: $type-body-sm;
-  font-weight: $font-weight-semibold;
+  font-family: v.$font-body;
+  font-size: v.$type-body-sm;
+  font-weight: v.$font-weight-semibold;
   line-height: 1;
-  border-radius: $radius-md;
+  border-radius: v.$radius-md;
   text-decoration: none;
-  transition: all $transition-base;
+  transition: all v.$transition-base;
   cursor: pointer;
   min-height: 44px; // touch target
   min-width: 44px;
@@ -79,22 +86,22 @@
   white-space: nowrap;
 
   &:focus-visible {
-    outline: 2px solid $color-accent-primary;
+    outline: 2px solid v.$color-accent-primary;
     outline-offset: 3px;
   }
 }
 
 .btn--primary {
-  background: $color-accent-primary;
-  color: $color-text-inverse;
-  border: 1px solid $color-accent-primary;
+  background: v.$gradient-accent;
+  color: #050811;
+  font-weight: v.$font-weight-bold;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35);
 
   &:hover {
-    background: $color-accent-light;
-    border-color: $color-accent-light;
-    color: $color-text-inverse;
+    color: #050811;
     transform: translateY(-2px);
-    box-shadow: $shadow-glow;
+    box-shadow: 0 6px 30px rgba(0, 240, 255, 0.55), 0 0 20px rgba(139, 92, 246, 0.4);
   }
 
   &:active {
@@ -103,15 +110,17 @@
 }
 
 .btn--secondary {
-  background: transparent;
-  color: $color-accent-primary;
-  border: 1px solid $color-border-accent;
+  background: rgba(0, 240, 255, 0.05);
+  color: v.$color-accent-primary;
+  border: 1px solid v.$color-border-accent;
+  backdrop-filter: blur(8px);
 
   &:hover {
-    background: rgba($color-accent-primary, 0.08);
-    border-color: $color-accent-primary;
-    color: $color-accent-light;
+    background: rgba(0, 240, 255, 0.12);
+    border-color: v.$color-accent-light;
+    color: v.$color-accent-light;
     transform: translateY(-2px);
+    box-shadow: v.$shadow-glow;
   }
 
   &:active {
@@ -120,14 +129,15 @@
 }
 
 .btn--ghost {
-  background: transparent;
-  color: $color-text-secondary;
-  border: 1px solid $color-border;
+  background: rgba(255, 255, 255, 0.02);
+  color: v.$color-text-secondary;
+  border: 1px solid v.$color-border;
+  backdrop-filter: blur(8px);
 
   &:hover {
-    color: $color-text-primary;
-    border-color: $color-border-hover;
-    background: rgba(255, 255, 255, 0.03);
+    color: v.$color-text-primary;
+    border-color: v.$color-border-hover;
+    background: rgba(255, 255, 255, 0.06);
     transform: translateY(-2px);
   }
 
@@ -138,7 +148,7 @@
 
 .btn--icon {
   padding: 0.6em;
-  border-radius: $radius-md;
+  border-radius: v.$radius-md;
 
   svg {
     width: 1.25em;
@@ -150,21 +160,28 @@
 .btn-group {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-md;
+  gap: v.$space-md;
 }
 
 // --- Tag / pill ---
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.3em 0.8em;
-  font-family: $font-mono;
-  font-size: $type-xs;
-  font-weight: $font-weight-medium;
-  color: $color-accent-primary;
-  background: rgba($color-accent-primary, 0.08);
-  border: 1px solid rgba($color-accent-primary, 0.15);
-  border-radius: $radius-pill;
+  padding: 0.35em 0.85em;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-accent-primary;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  border-radius: v.$radius-pill;
   white-space: nowrap;
   line-height: 1.5;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: v.$color-accent-primary;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
 }

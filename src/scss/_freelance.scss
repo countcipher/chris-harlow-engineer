@@ -1,61 +1,86 @@
 // ============================================================
 // FREELANCE / INDEPENDENT EXPERIENCE
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .freelance__content {
-  max-width: 48rem;
+  max-width: 52rem;
 }
 
 .freelance__lead {
-  font-size: clamp(1.1rem, 0.8vw + 0.8rem, 1.25rem);
-  color: $color-text-primary;
-  font-weight: $font-weight-medium;
-  line-height: 1.8;
-  margin-bottom: $space-xl;
+  font-size: clamp(1.15rem, 0.8vw + 0.85rem, 1.35rem);
+  color: v.$color-text-primary;
+  font-weight: v.$font-weight-medium;
+  line-height: 1.7;
+  margin-bottom: v.$space-xl;
 }
 
 .freelance__text {
-  font-size: $type-body;
-  color: $color-text-secondary;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
   line-height: 1.8;
 }
 
 .freelance__highlights {
   display: grid;
   grid-template-columns: 1fr;
-  gap: $space-md;
-  margin-top: $space-2xl;
+  gap: v.$space-lg;
+  margin-top: v.$space-2xl;
 
-  @media (min-width: $bp-sm) {
+  @media (min-width: v.$bp-sm) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: $bp-lg) {
+  @media (min-width: v.$bp-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .freelance__highlight-item {
-  padding: $space-lg;
-  background: $color-bg-surface-2;
-  border-radius: $radius-md;
-  border: 1px solid $color-border;
+  padding: v.$space-lg;
+  background: v.$color-bg-surface-2;
+  border-radius: v.$radius-lg;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: v.$gradient-accent;
+    opacity: 0;
+    transition: opacity v.$transition-base;
+  }
+
+  &:hover {
+    border-color: v.$color-border-hover;
+    transform: translateY(-2px);
+    box-shadow: v.$shadow-md;
+
+    &::before {
+      opacity: 1;
+    }
+  }
 
   .highlight-label {
-    font-family: $font-mono;
-    font-size: $type-xs;
-    color: $color-accent-primary;
+    font-family: v.$font-mono;
+    font-size: v.$type-xs;
+    color: v.$color-accent-primary;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: $space-sm;
+    letter-spacing: 0.12em;
+    margin-bottom: v.$space-sm;
   }
 
   .highlight-value {
-    font-family: $font-display;
-    font-size: $type-body;
-    font-weight: $font-weight-semibold;
-    color: $color-text-primary;
+    font-family: v.$font-display;
+    font-size: v.$type-body;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-primary;
     margin-bottom: 0;
   }
 }

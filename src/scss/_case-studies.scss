@@ -1,39 +1,43 @@
 // ============================================================
 // CASE STUDIES / SELECTED WORK
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .case-studies__list {
   display: flex;
   flex-direction: column;
-  gap: $space-xl;
+  gap: v.$space-2xl;
 }
 
 .case-study {
-  background: $color-bg-surface-1;
-  border: 1px solid $color-border;
-  border-radius: $radius-lg;
+  background: v.$color-bg-surface-1;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-xl;
   overflow: hidden;
-  transition: border-color $transition-base, box-shadow $transition-base;
+  transition: border-color v.$transition-base, box-shadow v.$transition-base, transform v.$transition-base;
 
   &:hover {
-    border-color: $color-border-hover;
+    border-color: v.$color-border-hover;
   }
 }
 
 .case-study__header {
-  padding: clamp($space-lg, 3vw, $space-2xl);
+  padding: clamp(v.$space-lg, 3vw, v.$space-2xl);
   cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: $space-md;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-xl;
   min-height: 44px;
   user-select: none;
-  transition: background $transition-fast;
+  transition: background v.$transition-fast;
+  align-items: center;
+
+  @media (min-width: v.$bp-md) {
+    grid-template-columns: 1.4fr 0.6fr auto;
+  }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.015);
+    background: rgba(255, 255, 255, 0.02);
   }
 }
 
@@ -41,67 +45,101 @@
   flex: 1;
 }
 
+.case-study__thumb-wrap {
+  display: none;
+
+  @media (min-width: v.$bp-md) {
+    display: block;
+    border-radius: v.$radius-md;
+    overflow: hidden;
+    border: 1px solid v.$color-border;
+    box-shadow: v.$shadow-sm;
+  }
+}
+
+.case-study__thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform v.$transition-base;
+
+  .case-study:hover & {
+    transform: scale(1.03);
+  }
+}
+
 .case-study__number {
-  font-family: $font-mono;
-  font-size: $type-xs;
-  color: $color-accent-primary;
-  letter-spacing: 0.1em;
-  margin-bottom: $space-sm;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-accent-primary;
+  letter-spacing: 0.15em;
+  margin-bottom: v.$space-sm;
+  display: inline-block;
 }
 
 .case-study__title {
-  font-family: $font-display;
-  font-size: $type-h3;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  margin-bottom: $space-sm;
+  font-family: v.$font-display;
+  font-size: v.$type-h3;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-sm;
 }
 
 .case-study__brief {
-  font-size: $type-body-sm;
-  color: $color-text-secondary;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-secondary;
   margin-bottom: 0;
-  max-width: 60ch;
+  max-width: 58ch;
 }
 
 .case-study__toggle {
   flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $color-border;
-  border-radius: $radius-md;
-  color: $color-text-muted;
-  transition: color $transition-fast, border-color $transition-fast, transform $transition-base;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  color: v.$color-text-muted;
+  background: rgba(255, 255, 255, 0.02);
+  transition: color v.$transition-fast, border-color v.$transition-fast, transform v.$transition-base, background v.$transition-fast;
 
   svg {
     width: 1.25rem;
     height: 1.25rem;
-    transition: transform $transition-base;
+    transition: transform v.$transition-base;
   }
 
   .case-study__header:hover & {
-    color: $color-accent-primary;
-    border-color: $color-border-accent;
+    color: v.$color-accent-primary;
+    border-color: v.$color-accent-primary;
+    background: rgba(0, 240, 255, 0.08);
   }
 }
 
 // Expanded state
 .case-study[data-expanded='true'] {
-  border-color: rgba($color-accent-primary, 0.15);
-  box-shadow: 0 0 30px $color-accent-glow;
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.12), v.$shadow-lg;
 
-  .case-study__toggle svg {
-    transform: rotate(180deg);
+  .case-study__toggle {
+    color: v.$color-accent-primary;
+    border-color: v.$color-accent-primary;
+    background: rgba(0, 240, 255, 0.12);
+
+    svg {
+      transform: rotate(180deg);
+    }
   }
 }
 
 .case-study__body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height $transition-slow, opacity $transition-base;
+  transition: max-height v.$transition-slow, opacity v.$transition-base;
   opacity: 0;
 
   .case-study[data-expanded='true'] & {
@@ -110,31 +148,45 @@
 }
 
 .case-study__content {
-  padding: 0 clamp($space-lg, 3vw, $space-2xl) clamp($space-lg, 3vw, $space-2xl);
-  border-top: 1px solid $color-border;
+  padding: 0 clamp(v.$space-lg, 3vw, v.$space-2xl) clamp(v.$space-lg, 3vw, v.$space-2xl);
+  border-top: 1px solid v.$color-border;
+}
+
+.case-study__visual-large {
+  margin-block: v.$space-xl;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  border: 1px solid v.$color-border;
+  box-shadow: v.$shadow-md;
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
 }
 
 .case-study__section {
-  padding-block: $space-lg;
+  padding-block: v.$space-lg;
 
   & + & {
-    border-top: 1px solid $color-border;
+    border-top: 1px solid v.$color-border;
   }
 }
 
 .case-study__section-title {
-  font-family: $font-display;
-  font-size: $type-body-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-accent-primary;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-accent-primary;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: $space-md;
+  letter-spacing: 0.12em;
+  margin-bottom: v.$space-sm;
 }
 
 .case-study__section-text {
-  font-size: $type-body;
-  color: $color-text-secondary;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
   line-height: 1.8;
   margin-bottom: 0;
 }
@@ -142,6 +194,6 @@
 .case-study__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-sm;
-  padding-top: $space-sm;
+  gap: v.$space-sm;
+  padding-top: v.$space-sm;
 }

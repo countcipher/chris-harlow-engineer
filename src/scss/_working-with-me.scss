@@ -1,26 +1,26 @@
 // ============================================================
 // WORKING WITH ME
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .working__content {
-  max-width: 48rem;
+  max-width: 52rem;
 }
 
 .working__lead {
-  font-size: clamp(1.1rem, 0.8vw + 0.8rem, 1.25rem);
-  color: $color-text-primary;
-  font-weight: $font-weight-medium;
-  line-height: 1.8;
-  margin-bottom: $space-xl;
+  font-size: clamp(1.15rem, 0.8vw + 0.85rem, 1.35rem);
+  color: v.$color-text-primary;
+  font-weight: v.$font-weight-medium;
+  line-height: 1.7;
+  margin-bottom: v.$space-xl;
 }
 
 .working__text {
-  font-size: $type-body;
-  color: $color-text-secondary;
+  font-size: v.$type-body;
+  color: v.$color-text-secondary;
   line-height: 1.8;
 }
 
 .working__cta {
-  margin-top: $space-2xl;
+  margin-top: v.$space-2xl;
 }

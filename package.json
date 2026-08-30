@@ -4,9 +4,11 @@
   "description": "Professional website for Chris Harlow — CTO, Solution Architect, Full-Stack Engineer",
   "private": true,
   "scripts": {
+    "copy:assets": "node scripts/copy-assets.js",
     "sass:build": "sass src/scss/main.scss css/main.css --source-map",
     "sass:watch": "sass --watch src/scss/main.scss:css/main.css --source-map",
     "sass:prod": "sass src/scss/main.scss css/main.css --style=compressed --no-source-map",
+    "build": "npm run copy:assets && npm run sass:build",
     "dev": "npm run sass:watch"
   },
   "devDependencies": {

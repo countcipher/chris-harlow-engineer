@@ -1,14 +1,14 @@
 // ============================================================
 // PROFESSIONAL EXPERIENCE TIMELINE
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 .timeline {
   position: relative;
-  padding-left: $space-2xl;
+  padding-left: v.$space-2xl;
 
-  @media (min-width: $bp-md) {
-    padding-left: $space-3xl;
+  @media (min-width: v.$bp-md) {
+    padding-left: v.$space-3xl;
   }
 
   // Vertical connector line
@@ -16,26 +16,26 @@
     content: '';
     position: absolute;
     left: 0;
-    top: $space-sm;
-    bottom: $space-sm;
-    width: 1px;
+    top: v.$space-sm;
+    bottom: v.$space-sm;
+    width: 2px;
     background: linear-gradient(
       to bottom,
-      $color-accent-primary,
-      $color-border 30%,
-      $color-border 70%,
+      v.$color-accent-primary,
+      v.$color-accent-secondary 40%,
+      v.$color-border 80%,
       transparent
     );
 
-    @media (min-width: $bp-md) {
-      left: $space-sm;
+    @media (min-width: v.$bp-md) {
+      left: v.$space-sm;
     }
   }
 }
 
 .timeline__item {
   position: relative;
-  padding-bottom: $space-2xl;
+  padding-bottom: v.$space-2xl;
 
   &:last-child {
     padding-bottom: 0;
@@ -45,54 +45,56 @@
   &::before {
     content: '';
     position: absolute;
-    left: -$space-2xl;
+    left: calc(-#{v.$space-2xl} - 4px);
     top: 0.35em;
-    width: 10px;
-    height: 10px;
-    background: $color-bg-primary;
-    border: 2px solid $color-accent-primary;
+    width: 12px;
+    height: 12px;
+    background: v.$color-bg-primary;
+    border: 2px solid v.$color-accent-primary;
     border-radius: 50%;
-    z-index: $z-base;
+    z-index: v.$z-base;
 
-    @media (min-width: $bp-md) {
-      left: calc(-#{$space-3xl} + #{$space-sm});
+    @media (min-width: v.$bp-md) {
+      left: calc(-#{v.$space-3xl} + #{v.$space-sm} - 5px);
     }
   }
 
-  // Current role — filled dot
+  // Current role — glowing dot
   &:first-child::before {
-    background: $color-accent-primary;
-    box-shadow: 0 0 0 4px $color-accent-glow;
+    background: v.$color-accent-primary;
+    box-shadow: 0 0 14px v.$color-accent-primary;
+    border-color: #FFFFFF;
   }
 }
 
 .timeline__date {
-  font-family: $font-mono;
-  font-size: $type-xs;
-  color: $color-accent-primary;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  color: v.$color-accent-primary;
   letter-spacing: 0.08em;
-  margin-bottom: $space-xs;
+  margin-bottom: v.$space-xs;
 }
 
 .timeline__role {
-  font-family: $font-display;
-  font-size: $type-h4;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  margin-bottom: $space-xs;
+  font-family: v.$font-display;
+  font-size: v.$type-h4;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  margin-bottom: v.$space-xs;
 }
 
 .timeline__company {
-  font-size: $type-body-sm;
-  color: $color-text-secondary;
-  margin-bottom: $space-sm;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-secondary;
+  font-weight: v.$font-weight-medium;
+  margin-bottom: v.$space-sm;
 }
 
 .timeline__desc {
-  font-size: $type-body-sm;
-  color: $color-text-muted;
+  font-size: v.$type-body-sm;
+  color: v.$color-text-muted;
   line-height: 1.7;
-  max-width: 50ch;
+  max-width: 54ch;
   margin-bottom: 0;
 }
 
@@ -100,13 +102,15 @@
 .timeline__badge {
   display: inline-flex;
   align-items: center;
-  gap: $space-xs;
-  font-family: $font-mono;
-  font-size: $type-xs;
-  color: $color-accent-primary;
-  background: $color-accent-glow;
-  padding: 0.2em 0.7em;
-  border-radius: $radius-pill;
-  margin-bottom: $space-sm;
-  font-weight: $font-weight-medium;
+  gap: v.$space-xs;
+  font-family: v.$font-mono;
+  font-size: v.$type-xs;
+  color: v.$color-accent-primary;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 0.2em 0.8em;
+  border-radius: v.$radius-pill;
+  margin-bottom: v.$space-sm;
+  font-weight: v.$font-weight-semibold;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
 }

@@ -1,35 +1,39 @@
 // ============================================================
 // BASE STYLES — Typography, Links, Selection
 // ============================================================
-@use 'variables' as *;
+@use 'variables' as v;
 
 body {
-  font-family: $font-body;
-  font-size: $type-body;
-  font-weight: $font-weight-regular;
-  color: $color-text-primary;
-  background-color: $color-bg-primary;
+  font-family: v.$font-body;
+  font-size: v.$type-body;
+  font-weight: v.$font-weight-regular;
+  color: v.$color-text-primary;
+  background-color: v.$color-bg-primary;
   overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(139, 92, 246, 0.03) 0%, transparent 40%);
 }
 
 // --- Headings ---
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-display;
-  font-weight: $font-weight-bold;
+  font-family: v.$font-display;
+  font-weight: v.$font-weight-bold;
   line-height: 1.15;
-  color: $color-text-primary;
+  color: v.$color-text-primary;
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: $type-h1; }
-h2 { font-size: $type-h2; margin-bottom: $space-lg; }
-h3 { font-size: $type-h3; margin-bottom: $space-md; }
-h4 { font-size: $type-h4; margin-bottom: $space-sm; }
+h1 { font-size: v.$type-h1; }
+h2 { font-size: v.$type-h2; margin-bottom: v.$space-lg; }
+h3 { font-size: v.$type-h3; margin-bottom: v.$space-md; }
+h4 { font-size: v.$type-h4; margin-bottom: v.$space-sm; }
 
 // --- Paragraphs ---
 p {
-  margin-bottom: $space-md;
-  color: $color-text-secondary;
+  margin-bottom: v.$space-md;
+  color: v.$color-text-secondary;
   line-height: 1.7;
 
   &:last-child {
@@ -39,19 +43,20 @@ p {
 
 // --- Links ---
 a {
-  color: $color-accent-primary;
-  transition: color $transition-fast;
+  color: v.$color-accent-primary;
+  transition: color v.$transition-fast, text-shadow v.$transition-fast;
 
   &:hover,
   &:focus-visible {
-    color: $color-accent-light;
+    color: v.$color-accent-light;
+    text-shadow: 0 0 12px v.$color-accent-glow;
   }
 }
 
 // --- Strong / emphasis ---
 strong, b {
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
 }
 
 em {
@@ -60,59 +65,60 @@ em {
 
 // --- Code ---
 code {
-  font-family: $font-mono;
+  font-family: v.$font-mono;
   font-size: 0.9em;
-  padding: 0.15em 0.4em;
-  background: $color-bg-surface-2;
-  border-radius: $radius-sm;
-  color: $color-accent-primary;
+  padding: 0.2em 0.5em;
+  background: v.$color-bg-surface-2;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  color: v.$color-accent-primary;
 }
 
 // --- Selection ---
 ::selection {
-  background: rgba($color-accent-primary, 0.3);
-  color: $color-text-primary;
+  background: rgba(0, 240, 255, 0.25);
+  color: v.$color-text-primary;
 }
 
 // --- Horizontal rule ---
 hr {
   border: none;
-  border-top: 1px solid $color-border;
-  margin: $space-2xl 0;
+  border-top: 1px solid v.$color-border;
+  margin: v.$space-2xl 0;
 }
 
 // --- Lists ---
 ul, ol {
-  padding-left: $space-lg;
-  margin-bottom: $space-md;
+  padding-left: v.$space-lg;
+  margin-bottom: v.$space-md;
 
   li {
-    margin-bottom: $space-xs;
-    color: $color-text-secondary;
+    margin-bottom: v.$space-xs;
+    color: v.$color-text-secondary;
     line-height: 1.7;
   }
 }
 
-// --- Scrollbar (Webkit) ---
+// --- Scrollbar ---
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $color-bg-primary;
+  background: v.$color-bg-primary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $color-bg-surface-3;
-  border-radius: $radius-pill;
+  background: v.$color-bg-surface-3;
+  border-radius: v.$radius-pill;
+  border: 2px solid v.$color-bg-primary;
 
   &:hover {
-    background: $color-bg-surface-4;
+    background: v.$color-accent-dark;
   }
 }
 
-// Firefox scrollbar
 html {
   scrollbar-width: thin;
-  scrollbar-color: $color-bg-surface-3 $color-bg-primary;
+  scrollbar-color: v.$color-bg-surface-3 v.$color-bg-primary;
 }
