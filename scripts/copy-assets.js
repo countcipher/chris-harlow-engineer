@@ -12,6 +12,7 @@ const fileMap = [
   { match: /^hero_tech_architecture_.*\.jpg$/, dest: 'hero-architecture.jpg' },
   { match: /^case_study_ai_mcp_.*\.jpg$/, dest: 'case-study-ai-mcp.jpg' },
   { match: /^case_study_security_.*\.jpg$/, dest: 'case-study-security.jpg' },
+  { match: /^case_study_bot_mitigation_.*\.jpg$/, dest: 'case-study-bot-mitigation.jpg' },
   { match: /^case_study_platform_.*\.jpg$/, dest: 'case-study-platform.jpg' },
   { match: /^case_study_hybrid_.*\.jpg$/, dest: 'case-study-hybrid.jpg' }
 ];

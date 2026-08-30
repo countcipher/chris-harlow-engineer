@@ -11,24 +11,38 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(v.$space-2xl, 5vw, v.$space-4xl);
-
-  @media (min-width: v.$bp-lg) {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+  max-width: 50rem;
 }
 
 .contact__info {
+  background: v.$color-bg-surface-1;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-xl;
+  padding: clamp(v.$space-xl, 4vw, v.$space-3xl);
+  box-shadow: v.$shadow-lg;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: v.$gradient-accent;
+  }
+
   h2 {
     margin-bottom: v.$space-xl;
   }
 }
 
 .contact__text {
-  font-size: v.$type-body;
+  font-size: clamp(1.05rem, 0.5vw + 0.85rem, 1.2rem);
   color: v.$color-text-secondary;
   line-height: 1.8;
-  margin-bottom: v.$space-xl;
+  margin-bottom: v.$space-2xl;
 }
 
 .contact__links {
@@ -38,6 +52,12 @@
   display: flex;
   flex-direction: column;
   gap: v.$space-md;
+
+  @media (min-width: v.$bp-sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: v.$space-lg;
+  }
 }
 
 .contact__link-item {
@@ -49,15 +69,19 @@
   align-items: center;
   gap: v.$space-md;
   font-size: v.$type-body;
-  color: v.$color-text-secondary;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-primary;
+  background: v.$color-bg-surface-2;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
   text-decoration: none;
-  transition: color v.$transition-fast, transform v.$transition-fast;
-  padding: v.$space-xs 0;
-  min-height: 44px;
+  padding: 0.8em 1.4em;
+  min-height: 48px;
+  transition: all v.$transition-fast;
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.35rem;
+    height: 1.35rem;
     flex-shrink: 0;
     color: v.$color-accent-primary;
     filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
@@ -65,12 +89,15 @@
 
   &:hover,
   &:focus-visible {
-    color: v.$color-accent-light;
-    transform: translateX(4px);
+    color: #FFFFFF;
+    border-color: v.$color-accent-primary;
+    background: rgba(0, 240, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
   }
 }
 
-// --- Form ---
+// --- Form (Preserved in stylesheet for future reference) ---
 .contact__form {
   background: v.$color-bg-surface-1;
   border: 1px solid v.$color-border;
