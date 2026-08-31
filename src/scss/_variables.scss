@@ -30,7 +30,7 @@ $gradient-border:        linear-gradient(135deg, rgba(0, 240, 255, 0.5) 0%, rgba
 
 $color-text-primary:     #F8FAFC; // Crisp platinum white
 $color-text-secondary:   #94A3B8; // Cool slate gray
-$color-text-muted:       #64748B; // Subdued slate
+$color-text-muted:       #8E9EB5; // Accessible slate gray (>= 5.8:1 on dark surfaces)
 $color-text-inverse:     #080B11; // Deep black
 
 $color-border:           rgba(255, 255, 255, 0.08);
@@ -38,7 +38,7 @@ $color-border-hover:     rgba(0, 240, 255, 0.3);
 $color-border-accent:    rgba(0, 240, 255, 0.4);
 
 $color-success:          #10B981;
-$color-error:            #F43F5E;
+$color-error:            #FB7185; // High-contrast rose (>= 6:1 on dark surfaces)
 $color-info:             #0EA5E9;
 
 // --- Typography ---
