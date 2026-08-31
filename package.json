@@ -1,7 +1,7 @@
 {
   "name": "chris-harlow-engineer",
   "version": "1.0.0",
-  "description": "Professional website for Chris Harlow — CTO, Solution Architect, Full-Stack Engineer",
+  "description": "Professional website for Chris Harlow — Software Architect, Full-Stack Engineer, Technical Leader",
   "private": true,
   "scripts": {
     "copy:assets": "node scripts/copy-assets.js",

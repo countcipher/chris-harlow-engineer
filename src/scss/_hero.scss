@@ -100,16 +100,23 @@
 
 .hero__meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: v.$space-xl;
+  flex-direction: column;
+  gap: v.$space-lg;
   padding-top: v.$space-xl;
   border-top: 1px solid v.$color-border;
+
+  @media (min-width: v.$bp-sm) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: clamp(1.25rem, 2.5vw, v.$space-xl);
+  }
 }
 
 .hero__stat {
   display: flex;
   flex-direction: column;
   gap: v.$space-xs;
+  flex-shrink: 0;
 }
 
 .hero__stat-value {
@@ -120,14 +127,16 @@
   background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 .hero__stat-label {
   font-family: v.$font-mono;
-  font-size: v.$type-xs;
-  color: v.$color-text-muted;
+  font-size: v.$type-small;
+  color: v.$color-text-secondary;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 // --- Visual Frame Showcase ---
